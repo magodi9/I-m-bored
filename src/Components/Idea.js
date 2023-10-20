@@ -14,9 +14,9 @@ export default function Idea(props) {
       "Hornea Galletas",
       "Make a collage",
       "Play a board game",
-      "Build a fort.",
+      "Build a fort",
       "Sing along to some Disney songs",
-      "Write a letter.",
+      "Write a letter",
     ].map((i) => {
       return {
         name: i,
@@ -27,25 +27,34 @@ export default function Idea(props) {
   console.log();
 
   return (
-    <View style={styles.idea}>
-      <Text style={styles.text}>{ideas[props.index].name}</Text>
-      <A style={styles.link} href={ideas[props.index].inspo}>
+    <View
+      style={{
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
+        top: "-121px",
+      }}
+    >
+      <Text
+        style={{
+          fontFamily: "Cardo-Italic",
+          color: "rgb(204 132 34)",
+          fontSize: "17px",
+        }}
+      >
+        {ideas[props.index].name}
+      </Text>
+      <A
+        style={{
+          fontFamily: "Cardo-Italic",
+          fontSize: "17px",
+          textDecoration: "underline",
+        }}
+        href={ideas[props.index].inspo}
+      >
         Inspo
       </A>
     </View>
   );
 }
-const styles = StyleSheet.create({
-  idea: {
-    justifyContent: "center",
-    alingItems: "center",
-  },
-  text: {
-    fontFamily: "cursive",
-  },
-  link: {
-    justifyContent: "center",
-    alingItems: "center",
-    color: "blue",
-  },
-});
